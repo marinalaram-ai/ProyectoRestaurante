@@ -13,12 +13,75 @@
 </head>
 <body>
 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="https://placehold.co/40x40?text=TB" alt="Logo Trattoria Bella Italia" class="rounded-circle">
+        Trattoria Bella Italia
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#entradas">Entradas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pastas">Pastas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pizzas">Pizzas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#postres">Postres</a></li>
+          <li class="nav-item"><a class="nav-link" href="#bebidas">Bebidas</a></li>
+        </ul>
+        <button type="button" class="btn btn-light ms-lg-3" data-bs-toggle="modal" data-bs-target="#modalReserva">
+          Reservar Mesa
+        </button>
+      </div>
+    </div>
+  </nav>
+
   <div class="container py-4">
 
   <div class="text-center mb-4">
     <img src="https://placehold.co/140x140?text=Logo" alt="Logo Trattoria Bella Italia" class="rounded-circle mb-3">
     <h1>Trattoria Bella Italia</h1>
     <h4 class="text-muted">Auténtica cocina italiana desde 1985</h4>
+  </div>
+
+  <div id="carouselPlatillos" class="carousel slide mb-4" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselPlatillos" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1"></button>
+      <button type="button" data-bs-target="#carouselPlatillos" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
+      <button type="button" data-bs-target="#carouselPlatillos" data-bs-slide-to="2" aria-label="Diapositiva 3"></button>
+    </div>
+    <div class="carousel-inner rounded">
+      <div class="carousel-item active">
+        <img src="https://placehold.co/900x400?text=Pizza+Margherita" class="d-block w-100" alt="Pizza Margherita">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+          <h5>Pizza Margherita</h5>
+          <p>Nuestra clásica pizza con mozzarella fresca y albahaca.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://placehold.co/900x400?text=Risotto+ai+Funghi" class="d-block w-100" alt="Risotto ai Funghi Porcini">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+          <h5>Risotto ai Funghi Porcini</h5>
+          <p>La recomendación especial del chef.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://placehold.co/900x400?text=Tiramisu" class="d-block w-100" alt="Tiramisú">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+          <h5>Tiramisú</h5>
+          <p>El postre italiano por excelencia, hecho en casa.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselPlatillos" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselPlatillos" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
   </div>
 
   <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
@@ -229,6 +292,9 @@
         <div class="card-body">
           <h3 class="card-title">Recomendación del Chef</h3>
           <p class="card-text">Risotto ai Funghi Porcini: arroz cremoso con hongos porcini y parmesano.</p>
+          <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalRisotto">
+            Ver receta completa
+          </button>
         </div>
       </div>
     </div>
@@ -245,6 +311,68 @@
   </div>
 
   </div>
+
+  <div class="modal fade" id="modalReserva" tabindex="-1" aria-labelledby="modalReservaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title" id="modalReservaLabel">Reservar una Mesa</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="reservaNombre" class="form-label">Nombre completo</label>
+              <input type="text" class="form-control" id="reservaNombre" required>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="reservaFecha" class="form-label">Fecha</label>
+                <input type="date" class="form-control" id="reservaFecha" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="reservaHora" class="form-label">Hora</label>
+                <input type="time" class="form-control" id="reservaHora" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="reservaPersonas" class="form-label">Número de personas</label>
+              <input type="number" class="form-control" id="reservaPersonas" min="1" required>
+            </div>
+            <div class="mb-3">
+              <label for="reservaTelefono" class="form-label">Teléfono de contacto</label>
+              <input type="tel" class="form-control" id="reservaTelefono" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger">Confirmar Reserva</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalRisotto" tabindex="-1" aria-labelledby="modalRisottoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-warning">
+          <h5 class="modal-title" id="modalRisottoLabel">Risotto ai Funghi Porcini</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://placehold.co/600x300?text=Risotto+ai+Funghi" class="img-fluid rounded mb-3" alt="Risotto ai Funghi Porcini">
+          <p>Nuestro Risotto ai Funghi Porcini se prepara con arroz Carnaroli cocido lentamente en caldo de verduras, hongos porcini rehidratados, vino blanco y un toque final de mantequilla y parmesano reggiano añejado 24 meses.</p>
+          <p class="mb-0"><strong>Precio:</strong> <span class="badge bg-success">$180</span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
 </body>
 </html>

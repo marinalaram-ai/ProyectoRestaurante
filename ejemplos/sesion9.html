@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30"
+                    height="24">
+            </a>
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Contáctanos
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="contactForm" novalidate>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Contáctanos</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="contactFormSuccess" class="alert alert-success d-none" role="alert">
+                            ¡Gracias! Tu mensaje ha sido enviado.
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="contactName" required>
+                            <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="contactEmail" required>
+                            <div class="invalid-feedback">Por favor ingresa un correo válido.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactPhone" class="form-label">Teléfono</label>
+                            <div class="input-group has-validation">
+                                <select class="form-select flex-grow-0 w-auto" id="contactLada" required
+                                    style="max-width: 130px;">
+                                    <option value="" selected disabled>Lada</option>
+                                    <option value="+52">🇲🇽 +52 (México)</option>
+                                    <option value="+1">🇺🇸 +1 (EE. UU.)</option>
+                                    <option value="+1">🇨🇦 +1 (Canadá)</option>
+                                    <option value="+34">🇪🇸 +34 (España)</option>
+                                    <option value="+57">🇨🇴 +57 (Colombia)</option>
+                                    <option value="+54">🇦🇷 +54 (Argentina)</option>
+                                    <option value="+56">🇨🇱 +56 (Chile)</option>
+                                    <option value="+51">🇵🇪 +51 (Perú)</option>
+                                </select>
+                                <input type="tel" class="form-control" id="contactPhone" required disabled
+                                    placeholder="Selecciona una lada primero">
+                                <div class="invalid-feedback">Selecciona una lada e ingresa un número válido.</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="contactMessage" rows="4" required></textarea>
+                            <div class="invalid-feedback">Por favor escribe tu mensaje.</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carousel -->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/250px-Cat_November_2010-1a.jpg?utm_source=es.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfs0a9V2d9ECbugTHYPKOnWiQGmGnAGKTfM7YuxLMgbQ&s=10"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb1Qk6RRUEMxyCY-LVhhlxvqDlgnEabEhCSndEm4-2q0Dlj6sSyjY5vrel&s=10"
+                    class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const contactFormSuccess = document.getElementById('contactFormSuccess');
+        const contactLada = document.getElementById('contactLada');
+        const contactPhone = document.getElementById('contactPhone');
+
+        // Agrupación de dígitos por lada, p. ej. México: 55 1234 5678
+        const phoneMasks = {
+            '+52': { pattern: [2, 4, 4], length: 10 }, // México
+            '+1': { pattern: [3, 3, 4], length: 10 },  // EE. UU. / Canadá
+            '+34': { pattern: [3, 3, 3], length: 9 },  // España
+            '+57': { pattern: [3, 3, 4], length: 10 }, // Colombia
+            '+54': { pattern: [2, 4, 4], length: 10 }, // Argentina
+            '+56': { pattern: [1, 4, 4], length: 9 },  // Chile
+            '+51': { pattern: [3, 3, 3], length: 9 },  // Perú
+        };
+
+        function formatPhone(digits, mask) {
+            const groups = [];
+            let index = 0;
+            mask.pattern.forEach(size => {
+                if (index < digits.length) {
+                    groups.push(digits.slice(index, index + size));
+                    index += size;
+                }
+            });
+            return groups.join(' ');
+        }
+
+        function applyPhoneMask() {
+            const mask = phoneMasks[contactLada.value];
+            if (!mask) {
+                contactPhone.disabled = true;
+                contactPhone.placeholder = 'Selecciona una lada primero';
+                contactPhone.value = '';
+                return;
+            }
+            contactPhone.disabled = false;
+            contactPhone.placeholder = formatPhone('0'.repeat(mask.length), mask).replace(/0/g, 'X');
+            const digits = contactPhone.value.replace(/\D/g, '').slice(0, mask.length);
+            contactPhone.value = formatPhone(digits, mask);
+        }
+
+        function validatePhone() {
+            const mask = phoneMasks[contactLada.value];
+            const digitsCount = contactPhone.value.replace(/\D/g, '').length;
+            if (!mask || digitsCount !== mask.length) {
+                contactPhone.setCustomValidity('invalid');
+            } else {
+                contactPhone.setCustomValidity('');
+            }
+        }
+
+        contactLada.addEventListener('change', function () {
+            applyPhoneMask();
+            validatePhone();
+        });
+
+        contactPhone.addEventListener('input', function () {
+            const mask = phoneMasks[contactLada.value];
+            if (mask) {
+                const digits = contactPhone.value.replace(/\D/g, '').slice(0, mask.length);
+                contactPhone.value = formatPhone(digits, mask);
+            }
+            validatePhone();
+        });
+
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            validatePhone();
+
+            if (!contactForm.checkValidity()) {
+                contactForm.classList.add('was-validated');
+                contactFormSuccess.classList.add('d-none');
+                return;
+            }
+
+            // Aquí se integraría el envío real (fetch a un backend, EmailJS, etc.)
+            contactFormSuccess.classList.remove('d-none');
+            contactForm.classList.remove('was-validated');
+            contactForm.reset();
+            applyPhoneMask();
+        });
+
+        document.getElementById('exampleModal').addEventListener('hidden.bs.modal', function () {
+            contactForm.classList.remove('was-validated');
+            contactFormSuccess.classList.add('d-none');
+            contactForm.reset();
+            applyPhoneMask();
+        });
+
+        applyPhoneMask();
+    </script>
+</body>
+
+</html>
