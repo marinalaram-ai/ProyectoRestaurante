@@ -84,21 +84,42 @@
     </button>
   </div>
 
-  <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
-    <a href="#entradas" class="btn btn-outline-danger">Entradas</a>
-    <a href="#pastas" class="btn btn-outline-danger">Pastas</a>
-    <a href="#pizzas" class="btn btn-outline-danger">Pizzas</a>
-    <a href="#postres" class="btn btn-outline-danger">Postres</a>
-    <a href="#bebidas" class="btn btn-outline-danger">Bebidas</a>
-  </div>
+  <ul class="nav nav-tabs nav-fill mb-4" id="menuTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="entradas-tab" data-bs-toggle="tab" data-bs-target="#entradas" type="button" role="tab" aria-controls="entradas" aria-selected="true">Entradas</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pastas-tab" data-bs-toggle="tab" data-bs-target="#pastas" type="button" role="tab" aria-controls="pastas" aria-selected="false">Pastas</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pizzas-tab" data-bs-toggle="tab" data-bs-target="#pizzas" type="button" role="tab" aria-controls="pizzas" aria-selected="false">Pizzas</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="postres-tab" data-bs-toggle="tab" data-bs-target="#postres" type="button" role="tab" aria-controls="postres" aria-selected="false">Postres</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="bebidas-tab" data-bs-toggle="tab" data-bs-target="#bebidas" type="button" role="tab" aria-controls="bebidas" aria-selected="false">Bebidas</button>
+    </li>
+  </ul>
 
   <div class="alert alert-info text-center" role="alert">
     <strong>Horario:</strong> Lunes a Domingo, 1:00 pm - 11:00 pm
   </div>
 
-  <div>
+  <div class="text-center mb-4">
+    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#infoAlergenos" aria-expanded="false" aria-controls="infoAlergenos">
+      Información sobre alérgenos
+    </button>
+    <div class="collapse mt-2" id="infoAlergenos">
+      <div class="card card-body text-start">
+        Algunos platillos pueden contener gluten, lácteos, huevo y frutos secos. Si tienes alguna alergia o restricción alimentaria, por favor avisa a tu mesero antes de ordenar.
+      </div>
+    </div>
+  </div>
 
-    <div id="entradas" class="mb-5">
+  <div class="tab-content" id="menuTabContent">
+
+    <div id="entradas" class="tab-pane fade show active" role="tabpanel" aria-labelledby="entradas-tab">
       <h2 class="mb-3">Entradas</h2>
 
       <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -139,7 +160,7 @@
       </div>
     </div>
 
-    <div id="pastas" class="mb-5">
+    <div id="pastas" class="tab-pane fade" role="tabpanel" aria-labelledby="pastas-tab">
       <h2 class="mb-3">Pastas</h2>
 
       <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -180,7 +201,7 @@
       </div>
     </div>
 
-    <div id="pizzas" class="mb-5">
+    <div id="pizzas" class="tab-pane fade" role="tabpanel" aria-labelledby="pizzas-tab">
       <h2 class="mb-3">Pizzas</h2>
 
       <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -221,7 +242,7 @@
       </div>
     </div>
 
-    <div id="postres" class="mb-5">
+    <div id="postres" class="tab-pane fade" role="tabpanel" aria-labelledby="postres-tab">
       <h2 class="mb-3">Postres</h2>
 
       <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -251,7 +272,7 @@
       </div>
     </div>
 
-    <div id="bebidas" class="mb-5">
+    <div id="bebidas" class="tab-pane fade" role="tabpanel" aria-labelledby="bebidas-tab">
       <h2 class="mb-3">Bebidas</h2>
 
       <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -302,6 +323,64 @@
 
   <div class="alert alert-warning text-center" role="alert">
     ¡Pregunta por nuestra Recomendación del Chef! Disponible todos los días.
+  </div>
+
+  <div class="mb-4">
+    <h3 class="mb-3">Preguntas Frecuentes</h3>
+    <div class="accordion" id="accordionFAQ">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeadingReservas">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqReservas" aria-expanded="true" aria-controls="faqReservas">
+            ¿Necesito reservar con anticipación?
+          </button>
+        </h2>
+        <div id="faqReservas" class="accordion-collapse collapse show" aria-labelledby="faqHeadingReservas" data-bs-parent="#accordionFAQ">
+          <div class="accordion-body">
+            Recomendamos reservar con al menos un día de anticipación, especialmente los fines de semana. Puedes reservar usando el botón "Reservar Mesa" en la parte superior de la página.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeadingEstacionamiento">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqEstacionamiento" aria-expanded="false" aria-controls="faqEstacionamiento">
+            ¿Cuentan con estacionamiento?
+          </button>
+        </h2>
+        <div id="faqEstacionamiento" class="accordion-collapse collapse" aria-labelledby="faqHeadingEstacionamiento" data-bs-parent="#accordionFAQ">
+          <div class="accordion-body">
+            Sí, contamos con estacionamiento gratuito para nuestros comensales frente al restaurante.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeadingVegetariano">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqVegetariano" aria-expanded="false" aria-controls="faqVegetariano">
+            ¿Tienen opciones vegetarianas?
+          </button>
+        </h2>
+        <div id="faqVegetariano" class="accordion-collapse collapse" aria-labelledby="faqHeadingVegetariano" data-bs-parent="#accordionFAQ">
+          <div class="accordion-body">
+            Sí, varios platillos de nuestra carta de pastas, pizzas y entradas son vegetarianos. Pregunta a tu mesero por las opciones disponibles.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeadingPago">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqPago" aria-expanded="false" aria-controls="faqPago">
+            ¿Qué métodos de pago aceptan?
+          </button>
+        </h2>
+        <div id="faqPago" class="accordion-collapse collapse" aria-labelledby="faqHeadingPago" data-bs-parent="#accordionFAQ">
+          <div class="accordion-body">
+            Aceptamos efectivo, tarjetas de crédito/débito y los principales monederos digitales.
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <div class="text-center border-top pt-3">
@@ -373,6 +452,20 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+  <script>
+    document.querySelectorAll('.navbar-nav .nav-link[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        var targetId = this.getAttribute('href');
+        var tabButton = document.querySelector('#menuTab button[data-bs-target="' + targetId + '"]');
+        if (tabButton) {
+          event.preventDefault();
+          bootstrap.Tab.getOrCreateInstance(tabButton).show();
+          document.getElementById('menuTab').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
