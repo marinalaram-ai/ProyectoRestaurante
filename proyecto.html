@@ -10,6 +10,38 @@
   <title>Menú - Trattoria Bella Italia | Comida Italiana en Hermosillo</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <style>
+    .layout-demo {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 599px) {
+      body {
+        background-color: gray;
+      }
+      .layout-demo {
+        flex-direction: row;
+      }
+    }
+    @media (min-width: 600px) and (max-width: 899px) {
+      body {
+        background-color: blue;
+      }
+    }
+    @media (min-width: 900px) and (max-width: 1200px) {
+      body {
+        background-color: purple;
+      }
+    }
+    @media (min-width: 1201px) {
+      body {
+        background-color: red;
+      }
+    }
+
+  </style>
 </head>
 <body>
 
@@ -398,6 +430,18 @@
     <p class="mb-0">Tel: (662) 123-4567</p>
   </div>
 
+  </div>
+
+  <div class="layout-demo">
+    <div class="container my-4">
+      <img src="https://placehold.co/300x150?text=Trattoria" alt="Interior del restaurante" class="img-fluid rounded mb-3">
+      <p>Ubicados en el corazón de Hermosillo, ofrecemos auténtica cocina italiana preparada con ingredientes frescos y recetas tradicionales.</p>
+    </div>
+
+    <div class="container-fluid my-4 bg-light py-3">
+      <p>Síguenos en nuestras redes sociales para conocer nuestras promociones y platillos de temporada.</p>
+      <p>Aceptamos reservaciones para eventos especiales y grupos grandes; contáctanos para más información.</p>
+    </div>
   </div>
 
   <div class="modal fade" id="modalReserva" tabindex="-1" aria-labelledby="modalReservaLabel" aria-hidden="true">
