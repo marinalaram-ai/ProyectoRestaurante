@@ -13,8 +13,9 @@
 
   <style>
     .layout-demo {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
 
     @media (max-width: 599px) {
@@ -22,22 +23,31 @@
         background-color: gray;
       }
       .layout-demo {
-        flex-direction: row;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
     @media (min-width: 600px) and (max-width: 899px) {
       body {
         background-color: blue;
       }
+      .layout-demo {
+        grid-template-columns: 1fr;
+      }
     }
     @media (min-width: 900px) and (max-width: 1200px) {
       body {
         background-color: purple;
       }
+      .layout-demo {
+        grid-template-columns: 2fr 1fr;
+      }
     }
     @media (min-width: 1201px) {
       body {
         background-color: red;
+      }
+      .layout-demo {
+        grid-template-columns: 1fr 2fr;
       }
     }
 
