@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CNN - Réplica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Banner principal (anuncio superior) */
+        .cnn-ad-banner {
+            background-color: #000;
+            color: #fff;
+            padding: 14px 20px;
+        }
+
+        .cnn-ad-banner .ad-price {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .cnn-ad-banner .ad-brand {
+            letter-spacing: 3px;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .cnn-ad-banner .ad-fine-print {
+            font-size: 0.7rem;
+            color: #aaa;
+        }
+
+        .cnn-ad-footer {
+            background-color: #f1f1f1;
+            font-size: 0.75rem;
+            color: #555;
+            padding: 4px 20px;
+        }
+
+        /* Navbar */
+        .cnn-navbar {
+            background-color: #fff;
+            border-bottom: 1px solid #e2e2e2;
+        }
+
+        .cnn-logo {
+            background-color: #cc0000;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.4rem;
+            padding: 2px 6px;
+            font-family: Arial, sans-serif;
+        }
+
+        .cnn-nav-link {
+            color: #262626 !important;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0 10px !important;
+        }
+
+        .cnn-nav-link:hover {
+            color: #cc0000 !important;
+        }
+
+        .cnn-watch-dot {
+            color: #cc0000;
+        }
+
+        /* Ticker de titulares */
+        .cnn-ticker {
+            background-color: #fff;
+            border-bottom: 1px solid #e2e2e2;
+            font-size: 0.8rem;
+            padding: 6px 20px;
+            white-space: nowrap;
+            overflow-x: auto;
+        }
+
+        .cnn-ticker a {
+            color: #262626;
+            text-decoration: none;
+        }
+
+        .cnn-ticker a:hover {
+            text-decoration: underline;
+        }
+
+        .cnn-ticker .sep {
+            color: #cc0000;
+            margin: 0 10px;
+        }
+
+        /* Card de noticia */
+        .cnn-card {
+            border: none;
+            border-radius: 0;
+        }
+
+        .cnn-card .card-img-top {
+            border-radius: 0;
+        }
+
+        .cnn-card .category-label {
+            color: #cc0000;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cnn-card .card-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            line-height: 1.3;
+        }
+
+        .cnn-card .card-text {
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        /* Layout de portada */
+        .cnn-story-small {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .cnn-story-small img {
+            width: 110px;
+            height: 74px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .cnn-story-small .headline {
+            font-size: 0.9rem;
+            font-weight: bold;
+            line-height: 1.25;
+        }
+
+        .cnn-story-small .headline a {
+            color: #262626;
+            text-decoration: none;
+        }
+
+        .cnn-story-small .headline a:hover {
+            color: #cc0000;
+        }
+
+        .cnn-duration {
+            font-size: 0.75rem;
+            color: #777;
+        }
+
+        .cnn-main-headline {
+            font-size: 1.9rem;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+
+        .cnn-main-headline a {
+            color: #262626;
+            text-decoration: none;
+        }
+
+        .cnn-main-img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+
+        .cnn-sub-headline {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .cnn-sub-headline a {
+            color: #262626;
+            text-decoration: none;
+        }
+
+        .cnn-widget-card {
+            border: 1px solid #ddd;
+            padding: 16px;
+            text-align: center;
+            background-color: #fafafa;
+            margin-bottom: 18px;
+        }
+
+        .cnn-section-title {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #262626;
+            border-left: 4px solid #cc0000;
+            padding-left: 8px;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Banner principal del sitio (anuncio) -->
+    <div class="cnn-ad-banner">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div>
+                <div class="ad-price">$399 por el Kit Mini <span class="fw-normal fs-6">con el plan Residencial
+                        Max de 12 meses (antes $4,999)</span></div>
+                <div class="ad-fine-print">DISEÑADO POR SPACEX</div>
+            </div>
+            <div class="ad-brand">STARLINK</div>
+        </div>
+    </div>
+    <div class="cnn-ad-footer d-flex justify-content-between">
+        <span>Advertisement</span>
+        <span>Ad Feedback</span>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg cnn-navbar">
+        <div class="container-fluid px-3">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand cnn-logo me-3" href="#">CNN</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link cnn-nav-link" href="#">US</a></li>
+                    <li class="nav-item"><a class="nav-link cnn-nav-link" href="#">World</a></li>
+                    <li class="nav-item"><a class="nav-link cnn-nav-link" href="#">Politics</a></li>
+                    <li class="nav-item"><a class="nav-link cnn-nav-link" href="#">Business</a></li>
+                    <li class="nav-item"><a class="nav-link cnn-nav-link" href="#">Health</a></li>
+                    <li class="nav-item"><a class="nav-link cnn-nav-link" href="#">Entertainment</a></li>
+                    <li class="nav-item"><a class="nav-link cnn-nav-link" href="#">Style</a></li>
+                    <li class="nav-item"><a class="nav-link cnn-nav-link" href="#">Travel</a></li>
+                    <li class="nav-item"><a class="nav-link cnn-nav-link" href="#">Sports</a></li>
+                    <li class="nav-item"><a class="nav-link cnn-nav-link" href="#">Science</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link cnn-nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Weather</a></li>
+                            <li><a class="dropdown-item" href="#">Investigations</a></li>
+                            <li><a class="dropdown-item" href="#">Climate</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <ul class="navbar-nav flex-row ms-auto d-none d-lg-flex align-items-center">
+                <li class="nav-item"><a class="nav-link cnn-nav-link" href="#"><span
+                            class="cnn-watch-dot">&#9679;</span> Watch</a></li>
+                <li class="nav-item"><a class="nav-link cnn-nav-link" href="#">&#127911; Listen</a></li>
+                <li class="nav-item"><a class="nav-link cnn-nav-link" href="#">&#128269;</a></li>
+                <li class="nav-item"><a class="nav-link cnn-nav-link" href="#">Sign In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Ticker de titulares destacados -->
+    <div class="cnn-ticker">
+        <a href="#">Amazon plane crash</a><span class="sep">|</span>
+        <a href="#">World's best-paid politician</a><span class="sep">|</span>
+        <a href="#">Lindsay Clancy trial</a><span class="sep">|</span>
+        <a href="#">'South Park' rebrand</a><span class="sep">|</span>
+        <a href="#">Hurricane Lowell</a><span class="sep">|</span>
+        <a href="#">Prenatal acetaminophen</a><span class="sep">|</span>
+        <a href="#">Renoir paintings stolen</a>
+    </div>
+
+    <!-- Layout principal de portada (3 columnas) -->
+    <div class="container-fluid my-4 px-4">
+        <div class="row">
+            <!-- Columna izquierda: notas pequeñas -->
+            <div class="col-lg-3">
+                <div class="cnn-story-small">
+                    <img src="https://picsum.photos/seed/cnn2/110/74" alt="Ucrania">
+                    <div>
+                        <div class="headline"><a href="#">Ukraine's battlefield optimism is ebbing as Russia
+                                threatens its 'fortress belt'</a></div>
+                        <div class="cnn-duration">Russian drone strikes building of Ukrainian TV channel &#9679;
+                            0:34</div>
+                    </div>
+                </div>
+                <div class="cnn-story-small">
+                    <img src="https://picsum.photos/seed/cnn3/110/74" alt="Reactores">
+                    <div>
+                        <div class="headline"><a href="#">Trump lays out next moves after Canada's retaliatory
+                                tariffs take effect</a></div>
+                    </div>
+                </div>
+                <div class="cnn-story-small">
+                    <img src="https://picsum.photos/seed/cnn4/110/74" alt="Política">
+                    <div>
+                        <div class="headline"><a href="#">'Fat b*tches': Videos reveal the extent of GOP
+                                candidate's crude sexual remarks</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna central: nota principal -->
+            <div class="col-lg-6">
+                <div class="cnn-main-headline">
+                    <a href="#">'Surge in construction' at suspected Iranian nuclear site, analysts say</a>
+                </div>
+                <img src="https://picsum.photos/seed/cnn1/700/320" class="cnn-main-img" alt="Sitio nuclear">
+                <div class="cnn-sub-headline">
+                    <a href="#">The Pentagon is looking into testing how it could destroy such underground
+                        facilities</a>
+                </div>
+                <div class="cnn-duration mb-3">Ted Cruz says US in 'military conflict' with Iran, not at war
+                    &#9679; 1:00</div>
+
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <img src="https://picsum.photos/seed/cnn5/340/180" class="w-100" alt="Petróleo">
+                        <div class="headline mt-2"><a href="#">Global oil prices hit $100 per barrel as Middle
+                                East conflict roils markets</a></div>
+                    </div>
+                    <div class="col-6">
+                        <img src="https://picsum.photos/seed/cnn6/340/180" class="w-100" alt="Barco">
+                        <div class="headline mt-2"><a href="#">US-Iran tanker attacks signal a potentially
+                                dangerous new phase in war</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna derecha: widget y notas -->
+            <div class="col-lg-3">
+                <div class="cnn-widget-card">
+                    <div class="fw-bold mb-2">Catch up on today's global news</div>
+                    <button class="btn btn-sm btn-outline-dark">Try Again</button>
+                </div>
+                <div class="cnn-story-small">
+                    <img src="https://picsum.photos/seed/cnn7/110/74" alt="Diamante">
+                    <div>
+                        <div class="headline"><a href="#">A hungry chambermaid bit into an apple and helped
+                                solve a high-wire diamond heist</a></div>
+                    </div>
+                </div>
+                <div class="cnn-story-small">
+                    <img src="https://picsum.photos/seed/cnn8/110/74" alt="Tenis">
+                    <div>
+                        <div class="headline"><a href="#">Ben Shelton triumphs over Carlos Alcaraz in 3:33
+                                a.m. finish at the US Open</a></div>
+                    </div>
+                </div>
+                <div class="cnn-story-small">
+                    <img src="https://picsum.photos/seed/cnn9/110/74" alt="South Park">
+                    <div>
+                        <div class="headline"><a href="#">'South Park' pokes fun at Trump. Rebrands as 'South
+                                America'</a></div>
+                        <div class="cnn-duration">&#9679; 0:48</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de cards -->
+    <div class="container-fluid my-4 px-4">
+        <div class="cnn-section-title">MORE TOP STORIES</div>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card cnn-card">
+                    <img src="https://picsum.photos/seed/cnn10/400/240" class="card-img-top" alt="Noticia 1">
+                    <div class="card-body px-0">
+                        <div class="category-label">US Politics</div>
+                        <h5 class="card-title">Trump gave Natalie Harp and two other aides $45,000 each in cash
+                            gifts for holidays</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card cnn-card">
+                    <img src="https://picsum.photos/seed/cnn11/400/240" class="card-img-top" alt="Noticia 2">
+                    <div class="card-body px-0">
+                        <div class="category-label">Health</div>
+                        <h5 class="card-title">Routine blood test may signal likelihood of colorectal cancer
+                            diagnosis before 45</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card cnn-card">
+                    <img src="https://picsum.photos/seed/cnn12/400/240" class="card-img-top" alt="Noticia 3">
+                    <div class="card-body px-0">
+                        <div class="category-label">World</div>
+                        <h5 class="card-title">Norway bids final farewell to King Harald V as crowds and
+                            royals converge for his funeral</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
