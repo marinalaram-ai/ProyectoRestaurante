@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head></head>
+    <body>
+        <div class="testimonio-vip">
+            <p>Este es un testimonio VIP</p>
+            <p>Este es un testimonio VIP</p>
+            <p>Este es un testimonio VIP</p>
+        </div>
+        <div>
+            <p>Este es un testimonio normal</p>
+            <p>Este es un testimonio normal</p>
+            <p>Este es un testimonio normal</p>
+        </div>
+        <div class="testimonio-vip">
+            <p>Este es un testimonio VIP</p>
+            <p>Este es un testimonio VIP</p>
+            <p>Este es un testimonio VIP</p>
+        </div>
+        <div>
+            <p>Este es un testimonio normal</p>
+            <p>Este es un testimonio normal</p>
+            <p>Este es un testimonio normal</p>
+        </div>
+        <div class="testimonio-vip">
+            <p>Este es un testimonio VIP</p>
+            <p>Este es un testimonio VIP</p>
+            <p>Este es un testimonio VIP</p>
+        </div>
+
+        <script>
+            let testimonioVIP = document.getElementsByClassName("testimonio-vip");
+            for (let i = 0; i < testimonioVIP.length; i++) {
+                testimonioVIP[i].style.color = "blue";
+            }
+
+            let parrafos = document.getElementsByTagName("p");
+            for (let i = 0; i < parrafos.length; i++) {
+                parrafos[i].style.color = "red";
+            }
+        </script>
+    </body>
+</html>
